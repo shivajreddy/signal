@@ -1,4 +1,4 @@
-module helloworld
+module signal
 
 go 1.21
 

@@ -11,7 +11,7 @@ import (
 )
 
 // ProjectName is the name of the project
-const ProjectName = "helloworld"
+const ProjectName = "signal"
 
 type Config struct {
 	Port         string

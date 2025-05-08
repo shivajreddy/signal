@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 
-	"helloworld/config"
-	"helloworld/models"
+	"signal/config"
+	"signal/models"
 
 	"github.com/gin-gonic/gin"
 )

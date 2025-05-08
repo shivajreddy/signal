@@ -8,6 +8,7 @@ RUN npm install vite@latest
 # Install other dependencies
 RUN npm install
 RUN npm install tailwindcss @tailwindcss/vite @tailwindcss/postcss postcss autoprefixer@latest
+RUN npm install axios @types/axios
 # Copy source code
 COPY . .
 # Expose port
@@ -28,6 +29,7 @@ RUN npm install vite@latest
 # Install dependencies
 RUN npm install
 RUN npm install tailwindcss @tailwindcss/vite @tailwindcss/postcss postcss
+RUN npm install axios @types/axios
 # Copy source code
 COPY . .
 # Build the application

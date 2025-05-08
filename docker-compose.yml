@@ -12,7 +12,7 @@ services:
       - DB_HOST=db
       - DB_USER=postgres
       - DB_PASSWORD=postgres
-      - DB_NAME=helloworld
+      - DB_NAME=signal
       - DB_PORT=5432
     volumes:
       - ./server:/app
@@ -45,7 +45,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=helloworld
+      - POSTGRES_DB=signal
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql

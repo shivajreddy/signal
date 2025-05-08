@@ -1,5 +1,5 @@
 -- Set project name variable
-\set project_name 'helloworld'
+\set project_name 'signal'
 
 -- Create database if not exists
 SELECT format('CREATE DATABASE %I', :'project_name')
