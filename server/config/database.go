@@ -11,7 +11,7 @@ import (
 
 var DB *gorm.DB
 
-func ConnectDB() {
+func ConnectDB() error {
 	// Create DSN string from config
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s",
 		AppConfig.DBConfig.Host,
@@ -42,13 +42,13 @@ func ConnectDB() {
 	}
 
 	if err != nil {
-		log.Fatal("Failed to connect to database after all retries:", err)
+		return fmt.Errorf("failed to connect to database after all retries: %v", err)
 	}
 
 	// Get the underlying *sql.DB
 	sqlDB, err := db.DB()
 	if err != nil {
-		log.Fatal("Failed to get database instance:", err)
+		return fmt.Errorf("failed to get database instance: %v", err)
 	}
 
 	// Set connection pool settings
@@ -58,6 +58,7 @@ func ConnectDB() {
 
 	DB = db
 	log.Println("Database connected successfully")
+	return nil
 }
 
 func GetDB() *gorm.DB {
