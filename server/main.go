@@ -56,11 +56,9 @@ func main() {
 		})
 	})
 
-	// Message represents the JSON payload
 	type Message struct {
 		Message string `json:"message" binding:"required"`
 	}
-
 	router.POST("/send", func(c *gin.Context) {
 		var msg Message
 
