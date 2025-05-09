@@ -56,11 +56,10 @@ func main() {
 		})
 	})
 
-	type Message struct {
-		Message string `json:"message" binding:"required"`
-	}
 	router.POST("/send", func(c *gin.Context) {
-		var msg Message
+		var msg struct {
+			Message string `json:"message" binding:"required"`
+		}
 
 		// Bind the JSON request body to the Message struct
 		if err := c.ShouldBindJSON(&msg); err != nil {
