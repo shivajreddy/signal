@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import TcpClient from './TcpClient';
 
 interface ApiResponse {
     status?: string;
@@ -25,12 +26,15 @@ function App() {
     }, []);
 
     return (
-        <div className="m-10 border-2 border-red-200 text-2xl text-red-500 text-center">
-            {data?.message ? (
-                <p>Message: {data.message}</p>
-            ) : (
-                'No data received'
-            )}
+        <div className="container mx-auto p-4">
+            <div className="mb-8 border-2 border-red-200 text-2xl text-red-500 text-center p-4">
+                {data?.message ? (
+                    <p>Message: {data.message}</p>
+                ) : (
+                    'No data received'
+                )}
+            </div>
+            <TcpClient />
         </div>
     );
 }

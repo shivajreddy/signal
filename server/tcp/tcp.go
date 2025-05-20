@@ -38,6 +38,7 @@ func ServerStart() {
 
 	fmt.Println("TCP Server listening on port 8000")
 
+	count := 0
 	// Accept connections in a loop
 	for {
 		conn, err := ln.Accept()
@@ -45,6 +46,8 @@ func ServerStart() {
 			log.Printf("Error accepting connection: %v", err)
 			continue
 		}
+		count++
+		fmt.Println("NEW CONNECTION, count:", count)
 
 		// Handle each connection in a new goroutine
 		go handleConnection(conn)
